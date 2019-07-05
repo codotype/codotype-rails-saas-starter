@@ -1,0 +1,59 @@
+{
+  "id": "codotype-rails-saas-starter",
+  "label": "Rails Saas Starter",
+  "icon": "https://res.cloudinary.com/codotype/image/upload/v1562276679/tech-logos/Ruby_On_Rails_Logo.png",
+  "description": "Instantly generate a full-stack Ruby On Rails Saas codebase - complete with user management, feature flags, and billing.",
+  "tech_tags": ["Ruby", "Rails", "Docker", "HAML", "Stripe"],
+  "type_tags": ["Fullstack"],
+  "self_configuring": false,
+  "project_path": "rails_app",
+  "github_url": "codotype/codotype-rails-saas-starter",
+  "version": "0.1.0",
+  "official": true,
+  "experience": "Expert",
+  "defaultSchemas": [],
+  "defaultConfiguration": {},
+  "supportedDatatypes": [
+    "STRING",
+    "TEXT",
+    "INTEGER",
+    "BIGINT",
+    "FLOAT",
+    "DECIMAL",
+    "BOOLEAN",
+    "DATE",
+    "TIME",
+    "DATETIME",
+    "TIMESTAMP"
+  ],
+  "supportedRelations": [
+    "BELONGS_TO",
+    "HAS_ONE",
+    "HAS_MANY"
+  ],
+  "configuration_groups": [
+    {
+      "id": "DEPLOYMENT_OPTION_GROUP",
+      "label": "Deployment",
+      "identifier": "deployment",
+      "description": "Configure the deployment options for your app",
+      "type": "CONFIGURATION_GROUP_TYPE_OPTION",
+      "scope": "CONFIGURATION_GROUP_SCOPE_GLOBAL",
+      "more_info_url": null,
+      "attributes": [
+        {
+          "label": "Deploy with Netlify",
+          "identifier": "netlify",
+          "type": "BOOLEAN",
+          "help": "Generate a <code>netlify.toml</code> file in the output directory for easy deployment to Netlify.",
+          "icon": {
+            "type": "ICON_TYPE_URL",
+            "value": "https://res.cloudinary.com/codotype/image/upload/f_png/v1552186408/tech-logos/netlify.svg"
+          },
+          "default_value": false,
+          "more_info_url": "https://netlify.com/"
+        }
+      ]
+    }
+  ]
+}

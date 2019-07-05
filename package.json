@@ -1,0 +1,12 @@
+{
+  "name": "@codotype/codotype-rails-saas-starter",
+  "version": "0.1.0",
+  "description": "A simple Vue.js frontend generator with Vuex, Bulma, &amp; Buefy",
+  "main": "index.js",
+  "author": "Alexander Schwartzberg",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/codotype/codotype-rails-sass-starter/issues"
+  },
+  "homepage": "https://github.com/codotype/codotype-rails-sass-starter#readme"
+}
