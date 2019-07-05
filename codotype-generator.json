@@ -42,16 +42,16 @@
       "more_info_url": null,
       "attributes": [
         {
-          "label": "Deploy with Netlify",
-          "identifier": "netlify",
+          "label": "Deploy with Heroku",
+          "identifier": "heroku",
           "type": "BOOLEAN",
-          "help": "Generate a <code>netlify.toml</code> file in the output directory for easy deployment to Netlify.",
+          "help": "Generate a <code>heroku</code> file in the output directory for easy deployment to Heroku.",
           "icon": {
             "type": "ICON_TYPE_URL",
-            "value": "https://res.cloudinary.com/codotype/image/upload/f_png/v1552186408/tech-logos/netlify.svg"
+            "value": "https://res.cloudinary.com/codotype/image/upload/f_png/v1552186408/tech-logos/heroku.svg"
           },
           "default_value": false,
-          "more_info_url": "https://netlify.com/"
+          "more_info_url": "https://heroku.com/"
         }
       ]
     }
