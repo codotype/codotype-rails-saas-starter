@@ -1,0 +1,37 @@
+<p id="notice"><%%= notice %%></p>
+
+<p>
+<%_ schema.attributes.forEach((attr, index) => { _%>
+<strong><%= attr.label %>:</strong>
+<%_ if (attr.datatype === DATATYPE_STRING) { _%>
+<%%= @<%= schema.identifier %>.<%= attr.identifier %> %%>
+<%_ } else if (attr.datatype === DATATYPE_TEXT) { _%>
+<%%= @<%= schema.identifier %>.<%= attr.identifier %> %%>
+<%_ } else if (attr.datatype === DATATYPE_INTEGER) { _%>
+<%%= @<%= schema.identifier %>.<%= attr.identifier %> %%>
+<%_ } else if (attr.datatype === DATATYPE_FLOAT) { _%>
+<%%= @<%= schema.identifier %>.<%= attr.identifier %> %%>
+<%_ } else if (attr.datatype === DATATYPE_DECIMAL) { _%>
+<%%= @<%= schema.identifier %>.<%= attr.identifier %> %%>
+<%_ } else if (attr.datatype === DATATYPE_BOOLEAN) { _%>
+<%%= @<%= schema.identifier %>.<%= attr.identifier %> %%>
+<%_ } else if (attr.datatype === DATATYPE_DATE) { _%>
+<%%= @<%= schema.identifier %>.<%= attr.identifier %> %%>
+<%_ } else if (attr.datatype === DATATYPE_TIME) { _%>
+<%%= @<%= schema.identifier %>.<%= attr.identifier %> %%>
+<%_ } else if (attr.datatype === DATATYPE_DATETIME) { _%>
+<%%= @<%= schema.identifier %>.<%= attr.identifier %> %%>
+<%_ } _%>
+</p>
+
+<%_ }) _%>
+
+<%_ schema.relations.forEach((rel, index) => { _%>
+<%_ if (rel.type === RELATION_TYPE_BELONGS_TO) { _%>
+<%_ } else if (rel.type === RELATION_TYPE_HAS_ONE) { _%>
+<%_ } else if (rel.type === RELATION_TYPE_HAS_MANY) { _%>
+<%_ } _%>
+<%_ }) _%>
+
+<%%= link_to 'Edit', edit_<%= schema.identifier %>_path(@<%= schema.identifier %>) %%> |
+<%%= link_to 'Back', <%= schema.identifier_plural %>_path %%>

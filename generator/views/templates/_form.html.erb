@@ -1,0 +1,50 @@
+<%%= form_with(model: <%= schema.identifier %>, local: true) do |form| %%>
+  <%% if <%= schema.identifier %>.errors.any? %%>
+    <div id="error_explanation">
+      <h2><%%= pluralize(<%= schema.identifier %>.errors.count, "error") %%> prohibited this <%= schema.identifier %> from being saved:</h2>
+
+      <ul>
+      <%% <%= schema.identifier %>.errors.full_messages.each do |message| %%>
+        <li><%%= message %%></li>
+      <%% end %%>
+      </ul>
+    </div>
+  <%% end %%>
+
+  <%_ schema.attributes.forEach((attr, index) => { _%>
+  <div class="field">
+    <%%= form.label :<%= attr.identifier %> %%>
+    <%_ if (attr.datatype === DATATYPE_STRING) { _%>
+    <%%= form.text_field :<%= attr.identifier %> %%>
+    <%_ } else if (attr.datatype === DATATYPE_TEXT) { _%>
+    <%%= form.text_field :<%= attr.identifier %> %%>
+    <%_ } else if (attr.datatype === DATATYPE_INTEGER) { _%>
+    <%%= form.number_field :<%= attr.identifier %> %%>
+    <%_ } else if (attr.datatype === DATATYPE_FLOAT) { _%>
+    <%%= form.number_field :<%= attr.identifier %> %%>
+    <%_ } else if (attr.datatype === DATATYPE_DECIMAL) { _%>
+    <%%= form.number_field :<%= attr.identifier %> %%>
+    <%_ } else if (attr.datatype === DATATYPE_BOOLEAN) { _%>
+    <%_ } else if (attr.datatype === DATATYPE_JSON) { _%>
+    <%_ } else if (attr.datatype === DATATYPE_DATE) { _%>
+    <%_ } else if (attr.datatype === DATATYPE_TIME) { _%>
+    <%_ } else if (attr.datatype === DATATYPE_DATETIME) { _%>
+    <%_ } else if (attr.datatype === DATATYPE_TIMESTAMP) { _%>
+    <%_ } _%>
+    <%_ }) _%>
+  </div>
+  <%_ schema.relations.forEach((rel, index) => { _%>
+  <div class="field">
+    <%%= form.label :<%= rel.schema.identifier %> %%>
+    <%_ if (rel.type === RELATION_TYPE_BELONGS_TO) { _%>
+    <%%= form.select :<%= rel.schema.identifier %>_id, <%= rel.schema.class_name %>.all.collect {|c| [ c.<%= getLeadAttr(rel) %>, c.id ] } %%>
+    <%_ } else if (rel.type === RELATION_TYPE_HAS_ONE) { _%>
+    <%_ } else if (rel.type === RELATION_TYPE_HAS_MANY) { _%>
+    <%_ } _%>
+  </div>
+  <%_ }) _%>
+
+  <div class="actions">
+    <%%= form.submit %%>
+  </div>
+<%% end %%>

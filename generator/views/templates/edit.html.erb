@@ -1,0 +1,6 @@
+<h1>Editing <%= schema.class_name %></h1>
+
+<%%= render 'form', <%= schema.identifier %>: @<%= schema.identifier %> %%>
+
+<%%= link_to 'Show', @<%= schema.identifier %> %%> |
+<%%= link_to 'Back', <%= schema.identifier_plural %>_path %%>

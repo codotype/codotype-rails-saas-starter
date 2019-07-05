@@ -1,0 +1,31 @@
+<p id="notice"><%%= notice %%></p>
+
+<h1><%= schema.label_plural %></h1>
+
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <%_ schema.attributes.forEach((attr, index) => { _%>
+      <th><%= attr.label %></th>
+      <%_ }) _%>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <%% @<%= schema.identifier_plural %>.each do |<%= schema.identifier %>| %%>
+      <tr>
+        <%_ schema.attributes.forEach((attr, index) => { _%>
+        <td><%%= <%= schema.identifier %>.<%= attr.identifier %> %%></td>
+        <%_ }) _%>
+        <td><%%= link_to 'Show', <%= schema.identifier %> %%></td>
+        <td><%%= link_to 'Edit', edit_<%= schema.identifier %>_path(<%= schema.identifier %>) %%></td>
+        <td><%%= link_to 'Destroy', <%= schema.identifier %>, method: :delete, data: { confirm: 'Are you sure?' } %%></td>
+      </tr>
+    <%% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%%= link_to 'New <%= schema.label %>', new_<%= schema.identifier %>_path %%>
