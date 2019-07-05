@@ -21,4 +21,4 @@ codotype-build/**/*
 *.njsproj
 *.sln
 
-./generator/base/templates/**/*
+generator/base/templates/**/*
